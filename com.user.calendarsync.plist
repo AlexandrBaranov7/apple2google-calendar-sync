@@ -8,18 +8,19 @@
     <string>com.user.calendarsync</string>
 
     <!--
-        Replace /path/to/venv/bin/python3 with the path to the Python interpreter
-        that has all dependencies installed, e.g.:
-            ~/.venv/calendarsync/bin/python3
-        or the output of: which python3
+        Option A (default): run the package directly via the venv interpreter.
+        Option B: if the package is installed (`pip install -e .`), use the
+                  console script instead and remove the two lines below it:
+                      <string>/Users/baranov.am/.venv/calendarsync/bin/apple2google-sync</string>
     -->
     <key>ProgramArguments</key>
     <array>
-        <string>/path/to/venv/bin/python3</string>
-        <string>/Users/baranov.am/Applications/CalendarSync/calendar_sync.py</string>
+        <string>/Users/baranov.am/.venv/calendarsync/bin/python3</string>
+        <string>-m</string>
+        <string>apple2google_calendar_sync</string>
     </array>
 
-    <!-- Working directory must contain config.py -->
+    <!-- Working directory must contain the top-level config.py -->
     <key>WorkingDirectory</key>
     <string>/Users/baranov.am/Applications/CalendarSync</string>
 
