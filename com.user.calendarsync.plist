@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+    <key>Label</key>
+    <string>com.user.calendarsync</string>
+
+    <!--
+        Replace /path/to/venv/bin/python3 with the path to the Python interpreter
+        that has all dependencies installed, e.g.:
+            ~/.venv/calendarsync/bin/python3
+        or the output of: which python3
+    -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/path/to/venv/bin/python3</string>
+        <string>/Users/baranov.am/Applications/CalendarSync/calendar_sync.py</string>
+    </array>
+
+    <!-- Working directory must contain config.py -->
+    <key>WorkingDirectory</key>
+    <string>/Users/baranov.am/Applications/CalendarSync</string>
+
+    <!-- Run every 15 minutes (900 seconds) -->
+    <key>StartInterval</key>
+    <integer>900</integer>
+
+    <!-- Also run immediately when the agent is loaded -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- Logs – rotate manually or via newsyslog if needed -->
+    <key>StandardOutPath</key>
+    <string>/Users/baranov.am/Library/Logs/CalendarSync/sync.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/baranov.am/Library/Logs/CalendarSync/sync_error.log</string>
+
+    <!--
+        Propagate the user's PATH so the interpreter and any helpers are found.
+        Adjust HOME if you run as a different user.
+    -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>/Users/baranov.am</string>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
+</dict>
+</plist>

@@ -1,0 +1,4 @@
+pyobjc-framework-EventKit>=10.0
+google-api-python-client>=2.100.0
+google-auth-oauthlib>=1.2.0
+google-auth>=2.25.0
