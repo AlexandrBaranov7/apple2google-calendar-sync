@@ -3,6 +3,7 @@ import logging
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from typing import Any
 
 from .calendar_reader import AppleCalendarReader
 from .calendar_writer import GoogleCalendarClient
@@ -45,7 +46,7 @@ def main(config_module: Any = None) -> int:
     if config_module is None:
         import config as config_module  # type: ignore[import-not-found]
 
-    _configure_logging()
+    configure_logging()
 
     cfg = SyncConfig(
         exchange_calendar_name=config_module.EXCHANGE_CALENDAR_NAME,
