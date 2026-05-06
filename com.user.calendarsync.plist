@@ -5,7 +5,7 @@
 <dict>
 
     <key>Label</key>
-    <string>com.user.calendarsync</string>
+    <string>com.user.apple2google-sync</string>
 
     <!--
         Option A (default): run the package directly via the venv interpreter.
